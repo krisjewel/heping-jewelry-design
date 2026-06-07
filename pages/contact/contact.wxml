@@ -82,31 +82,6 @@
     <text class="appointment-hint">我们期待为您提供尊贵的珠宝鉴赏体验</text>
   </view>
 
-  <!-- 品牌简介 -->
-  <view class="contact-about">
-    <text class="ca-title">关于我们</text>
-    <text class="ca-text">
-      何平珠宝设计创立于1999年，是一家集珠宝设计、制作、销售于一体的高端珠宝品牌。
-      我们拥有资深的设计团队和精湛的制作工艺，致力于为每一位客户打造独一无二的珠宝作品。
-      从精选宝石到设计定稿，从手工制作到品质把控，每一个环节我们都精益求精，
-      只为呈现最完美的珠宝艺术品。
-    </text>
-    <view class="ca-values">
-      <view class="cav-item">
-        <text class="cav-num">14+</text>
-        <text class="cav-label">年品牌历史</text>
-      </view>
-      <view class="cav-item">
-        <text class="cav-num">5000+</text>
-        <text class="cav-label">定制作品</text>
-      </view>
-      <view class="cav-item">
-        <text class="cav-num">98%</text>
-        <text class="cav-label">客户好评</text>
-      </view>
-    </view>
-  </view>
-
   <!-- 底部留白 -->
   <view class="bottom-space"></view>
 </view>
