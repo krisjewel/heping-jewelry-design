@@ -22,7 +22,7 @@ App({
     brandSlogan: '匠人匠心 · 精艺求精',
     contactPhone: '138-0000-8888',
     contactAddress: '云南省昆明市五华区东风西路世代景星珠宝地下室一号',
-    businessHours: '周一至周日 10:00 - 21:00',
+    businessHours: '周一至周日 9:00 - 18:00',
     wechatId: 'JewelryDesign_Official',
 
     // ===== 图片配置 =====
