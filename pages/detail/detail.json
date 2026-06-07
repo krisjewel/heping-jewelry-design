@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "image-viewer": "/components/image-viewer/image-viewer"
+  }
+}

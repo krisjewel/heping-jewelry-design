@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "category-grid": "/components/category-grid/category-grid",
+    "product-card": "/components/product-card/product-card"
+  },
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark",
+  "navigationBarTitleText": "何平珠宝设计"
+}

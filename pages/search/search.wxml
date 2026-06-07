@@ -1,0 +1,74 @@
+<view class="page-search">
+  <!-- 搜索栏 -->
+  <view class="search-bar">
+    <view class="search-input-wrap">
+      <text class="search-icon">🔍</text>
+      <input
+        class="search-input"
+        placeholder="{{placeholder}}"
+        placeholder-class="search-placeholder"
+        value="{{keyword}}"
+        focus="{{true}}"
+        bindinput="onInput"
+        bindconfirm="onSearch"
+        confirm-type="search"
+      />
+      <text
+        wx:if="{{keyword}}"
+        class="search-clear"
+        bindtap="onClear"
+      >✕</text>
+    </view>
+    <text class="search-btn" bindtap="onSearch">搜索</text>
+  </view>
+
+  <!-- 热门搜索标签 -->
+  <view wx:if="{{!hasSearched && !keyword}}" class="hot-search">
+    <text class="hot-title">🔥 热门搜索</text>
+    <view class="hot-tags">
+      <text class="hot-tag" bindtap="onTapHotTag" data-value="钻石">钻石</text>
+      <text class="hot-tag" bindtap="onTapHotTag" data-value="翡翠">翡翠</text>
+      <text class="hot-tag" bindtap="onTapHotTag" data-value="红宝石">红宝石</text>
+      <text class="hot-tag" bindtap="onTapHotTag" data-value="珍珠">珍珠</text>
+      <text class="hot-tag" bindtap="onTapHotTag" data-value="定制">定制</text>
+      <text class="hot-tag" bindtap="onTapHotTag" data-value="戒指">戒指</text>
+    </view>
+  </view>
+
+  <!-- 搜索结果 -->
+  <view wx:if="{{hasSearched}}" class="search-results">
+    <view class="results-header">
+      <text class="results-count">
+        找到 <text class="gold-text">{{results.length}}</text> 件相关作品
+      </text>
+    </view>
+
+    <!-- 结果网格 -->
+    <view wx:if="{{results.length > 0}}" class="product-grid">
+      <view
+        wx:for="{{results}}"
+        wx:key="id"
+        class="product-grid-item"
+      >
+        <product-card item="{{item}}" showCategory="{{true}}" />
+      </view>
+    </view>
+
+    <!-- 无结果 -->
+    <view wx:else class="empty-state">
+      <text class="empty-icon">🔍</text>
+      <text class="empty-title">未找到相关作品</text>
+      <text class="empty-desc">试试其他关键词，比如"钻石"、"翡翠"、"戒指"</text>
+    </view>
+  </view>
+
+  <!-- 初始状态提示 -->
+  <view wx:if="{{!hasSearched && !keyword}}" class="search-hint">
+    <text class="hint-icon">💎</text>
+    <text class="hint-title">搜索你心仪的珠宝</text>
+    <text class="hint-desc">可按名称、材质、宝石、设计理念搜索</text>
+  </view>
+
+  <!-- 底部留白 -->
+  <view class="bottom-space"></view>
+</view>

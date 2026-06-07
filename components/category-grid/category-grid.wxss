@@ -1,0 +1,99 @@
+.category-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20rpx;
+  padding: 0;
+}
+
+.category-grid.cols-2 .category-item {
+  width: calc((100% - 20rpx) / 2);
+}
+
+.category-grid.cols-3 .category-item {
+  width: calc((100% - 40rpx) / 3);
+}
+
+.category-grid.cols-4 .category-item {
+  width: calc((100% - 60rpx) / 4);
+}
+
+.category-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.category-item:active {
+  opacity: 0.8;
+}
+
+/* 分类图标 */
+.category-icon-wrap {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+}
+
+/* small 尺寸 */
+.size-small .category-icon-wrap {
+  border-radius: var(--radius-sm);
+}
+
+.size-small .category-icon {
+  font-size: 40rpx;
+}
+
+.size-normal .category-icon {
+  font-size: 56rpx;
+}
+
+.size-large .category-icon-wrap {
+  aspect-ratio: 1.4;
+  border-radius: var(--radius-lg);
+}
+
+.size-large .category-icon {
+  font-size: 72rpx;
+}
+
+/* 分类文字 */
+.category-text {
+  text-align: center;
+  margin-top: 12rpx;
+  width: 100%;
+}
+
+.category-name {
+  font-size: var(--font-sm);
+  font-weight: 600;
+  color: var(--text-primary);
+  display: block;
+}
+
+.size-large .category-name {
+  font-size: var(--font-lg);
+}
+
+.category-desc {
+  font-size: var(--font-xs);
+  color: var(--text-light);
+  display: block;
+  margin-top: 4rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.category-count {
+  font-size: var(--font-xs);
+  color: var(--gold-primary);
+  display: block;
+  margin-top: 4rpx;
+}

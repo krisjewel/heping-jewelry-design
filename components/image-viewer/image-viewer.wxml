@@ -1,0 +1,32 @@
+<view class="image-viewer">
+  <swiper
+    class="swiper"
+    indicator-dots="{{true}}"
+    indicator-color="rgba(255,255,255,0.4)"
+    indicator-active-color="#C9A96E"
+    autoplay="{{autoplay}}"
+    interval="{{interval}}"
+    duration="{{duration}}"
+    bindchange="onSwiperChange"
+  >
+    <swiper-item wx:for="{{images}}" wx:key="*this">
+      <image
+        class="slide-img"
+        src="{{item}}"
+        mode="aspectFill"
+        binderror="onImageError"
+        data-index="{{index}}"
+        bindtap="onTapImage"
+      />
+      <!-- 加载失败的占位 -->
+      <view wx:if="{{failedIndex === index}}" class="slide-placeholder" bindtap="onTapImage" data-index="{{index}}">
+        <text class="slide-icon">💎</text>
+        <text class="slide-hint">暂无图片 · 点击查看</text>
+      </view>
+    </swiper-item>
+  </swiper>
+  <!-- 图片计数器 -->
+  <view wx:if="{{images.length > 1}}" class="image-counter">
+    {{currentIndex + 1}} / {{images.length}}
+  </view>
+</view>

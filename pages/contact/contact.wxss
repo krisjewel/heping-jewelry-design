@@ -1,0 +1,192 @@
+/* ===== 联系我们页样式 ===== */
+
+.page-contact {
+  min-height: 100vh;
+  background: var(--bg-light);
+}
+
+/* 品牌Hero */
+.contact-hero {
+  padding: 60rpx 48rpx;
+  text-align: center;
+}
+
+.ch-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ch-logo {
+  font-size: 80rpx;
+  margin-bottom: 20rpx;
+}
+
+.ch-brand {
+  font-size: var(--font-xxl);
+  font-weight: 700;
+  color: var(--gold-primary);
+  letter-spacing: 8rpx;
+  display: block;
+}
+
+.ch-slogan {
+  font-size: var(--font-md);
+  color: var(--gold-primary);
+  margin-top: 12rpx;
+  letter-spacing: 6rpx;
+  opacity: 0.8;
+}
+
+/* 联系方式列表 */
+.contact-body {
+  padding: 32rpx 24rpx 0;
+}
+
+.contact-card {
+  display: flex;
+  align-items: center;
+  padding: 28rpx 24rpx;
+  margin-bottom: 16rpx;
+  gap: 20rpx;
+}
+
+.contact-card:active {
+  background: #F9F9F9;
+}
+
+.cc-icon-wrap {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cc-icon {
+  font-size: 36rpx;
+}
+
+.contact-card-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.cc-title {
+  font-size: var(--font-xs);
+  color: var(--text-light);
+  display: block;
+  margin-bottom: 4rpx;
+}
+
+.cc-value {
+  font-size: var(--font-md);
+  font-weight: 600;
+  color: var(--text-primary);
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.contact-card-arrow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.cc-arrow {
+  font-size: var(--font-lg);
+}
+
+.cc-hint {
+  font-size: var(--font-xs);
+  color: var(--gold-primary);
+  font-weight: 500;
+}
+
+/* 预约按钮 */
+.appointment-section {
+  padding: 32rpx 24rpx;
+  text-align: center;
+}
+
+.appointment-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12rpx;
+  font-size: var(--font-lg);
+  height: 100rpx;
+  border-radius: var(--radius-lg);
+}
+
+.appointment-icon {
+  font-size: 36rpx;
+}
+
+.appointment-hint {
+  font-size: var(--font-xs);
+  color: var(--text-light);
+  display: block;
+  margin-top: 16rpx;
+}
+
+/* 品牌简介 */
+.contact-about {
+  padding: 32rpx 24rpx;
+}
+
+.ca-title {
+  font-size: var(--font-lg);
+  font-weight: 700;
+  color: var(--text-primary);
+  display: block;
+  margin-bottom: 16rpx;
+  padding-left: 16rpx;
+  border-left: 4rpx solid var(--gold-primary);
+}
+
+.ca-text {
+  font-size: var(--font-sm);
+  color: var(--text-secondary);
+  line-height: 1.8;
+  display: block;
+}
+
+/* 品牌数据 */
+.ca-values {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 32rpx;
+  padding: 24rpx;
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.cav-item {
+  text-align: center;
+}
+
+.cav-num {
+  font-size: var(--font-xl);
+  font-weight: 700;
+  color: var(--gold-primary);
+  display: block;
+}
+
+.cav-label {
+  font-size: var(--font-xs);
+  color: var(--text-light);
+  display: block;
+  margin-top: 4rpx;
+}
+
+.bottom-space {
+  height: 140rpx;
+}

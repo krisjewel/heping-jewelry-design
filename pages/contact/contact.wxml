@@ -1,0 +1,112 @@
+<view class="page-contact">
+  <!-- 品牌Logo区 -->
+  <view class="contact-hero dark-bg">
+    <view class="ch-content">
+      <text class="ch-logo">💎</text>
+      <text class="ch-brand">{{brandName}}</text>
+      <text class="ch-slogan">{{brandSlogan}}</text>
+    </view>
+  </view>
+
+  <!-- 联系方式 -->
+  <view class="contact-body">
+    <!-- 电话 -->
+    <view class="contact-card card" bindtap="onCall">
+      <view class="contact-card-left">
+        <view class="cc-icon-wrap" style="background: linear-gradient(135deg, #4CAF50, #81C784);">
+          <text class="cc-icon">📞</text>
+        </view>
+      </view>
+      <view class="contact-card-main">
+        <text class="cc-title">联系电话</text>
+        <text class="cc-value">{{contactPhone}}</text>
+      </view>
+      <view class="contact-card-arrow">
+        <text class="cc-arrow">📞</text>
+        <text class="cc-hint">拨打</text>
+      </view>
+    </view>
+
+    <!-- 微信 -->
+    <view class="contact-card card" bindtap="onCopyWechat">
+      <view class="contact-card-left">
+        <view class="cc-icon-wrap" style="background: linear-gradient(135deg, #07C160, #52D681);">
+          <text class="cc-icon">💬</text>
+        </view>
+      </view>
+      <view class="contact-card-main">
+        <text class="cc-title">官方微信</text>
+        <text class="cc-value">{{wechatId}}</text>
+      </view>
+      <view class="contact-card-arrow">
+        <text class="cc-hint">复制</text>
+      </view>
+    </view>
+
+    <!-- 地址 -->
+    <view class="contact-card card" bindtap="onCopyAddress">
+      <view class="contact-card-left">
+        <view class="cc-icon-wrap" style="background: linear-gradient(135deg, #FF9800, #FFB74D);">
+          <text class="cc-icon">📍</text>
+        </view>
+      </view>
+      <view class="contact-card-main">
+        <text class="cc-title">门店地址</text>
+        <text class="cc-value">{{contactAddress}}</text>
+      </view>
+      <view class="contact-card-arrow">
+        <text class="cc-hint">复制</text>
+      </view>
+    </view>
+
+    <!-- 营业时间 -->
+    <view class="contact-card card">
+      <view class="contact-card-left">
+        <view class="cc-icon-wrap" style="background: linear-gradient(135deg, #9C27B0, #CE93D8);">
+          <text class="cc-icon">🕐</text>
+        </view>
+      </view>
+      <view class="contact-card-main">
+        <text class="cc-title">营业时间</text>
+        <text class="cc-value">{{businessHours}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 预约按钮 -->
+  <view class="appointment-section">
+    <view class="btn-gold appointment-btn" bindtap="onAppointment">
+      <text class="appointment-icon">💎</text>
+      <text>预约到店体验</text>
+    </view>
+    <text class="appointment-hint">我们期待为您提供尊贵的珠宝鉴赏体验</text>
+  </view>
+
+  <!-- 品牌简介 -->
+  <view class="contact-about">
+    <text class="ca-title">关于我们</text>
+    <text class="ca-text">
+      何平珠宝设计创立于1999年，是一家集珠宝设计、制作、销售于一体的高端珠宝品牌。
+      我们拥有资深的设计团队和精湛的制作工艺，致力于为每一位客户打造独一无二的珠宝作品。
+      从精选宝石到设计定稿，从手工制作到品质把控，每一个环节我们都精益求精，
+      只为呈现最完美的珠宝艺术品。
+    </text>
+    <view class="ca-values">
+      <view class="cav-item">
+        <text class="cav-num">14+</text>
+        <text class="cav-label">年品牌历史</text>
+      </view>
+      <view class="cav-item">
+        <text class="cav-num">5000+</text>
+        <text class="cav-label">定制作品</text>
+      </view>
+      <view class="cav-item">
+        <text class="cav-num">98%</text>
+        <text class="cav-label">客户好评</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 底部留白 -->
+  <view class="bottom-space"></view>
+</view>

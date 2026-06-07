@@ -1,0 +1,30 @@
+<view class="product-card card" bindtap="onTap">
+  <!-- 图片区域 -->
+  <view class="card-image">
+    <image
+      class="card-img"
+      src="{{item.images[0]}}"
+      mode="aspectFill"
+      lazy-load
+      binderror="onImageError"
+    />
+    <!-- 图片加载失败时的占位 -->
+    <view wx:if="{{imageFailed}}" class="card-placeholder" style="background: {{item.placeholderColor}};">
+      <text class="card-icon">💎</text>
+    </view>
+    <view class="card-image-meta">
+      <text wx:if="{{item.isNew}}" class="tag-new">NEW</text>
+      <text wx:if="{{item.featured}}" class="tag-featured">精选</text>
+    </view>
+  </view>
+  <!-- 信息区域 -->
+  <view class="card-info">
+    <text wx:if="{{showCategory}}" class="card-category gold-text">{{item.categoryName}}</text>
+    <text class="card-name">{{item.name}}</text>
+    <view class="card-meta">
+      <text class="card-material">{{item.mainMaterial}}</text>
+      <text wx:if="{{item.gemstone}}" class="card-gem">· {{item.gemstone}}</text>
+    </view>
+    <text class="card-price gold-text">{{item.priceRange}}</text>
+  </view>
+</view>

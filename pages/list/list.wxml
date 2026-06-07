@@ -1,0 +1,69 @@
+<view class="page-list">
+  <!-- 顶部信息栏 -->
+  <view class="list-header">
+    <view class="lh-info">
+      <text class="lh-title">{{categoryName}}</text>
+      <text class="lh-count">共 {{totalCount}} 件作品</text>
+    </view>
+    <!-- 排序按钮 -->
+    <view class="lh-sort">
+      <text
+        class="sort-btn {{sortType === 'default' ? 'active' : ''}}"
+        data-type="default"
+        bindtap="onSortChange"
+      >默认</text>
+      <text
+        class="sort-btn {{sortType === 'new' ? 'active' : ''}}"
+        data-type="new"
+        bindtap="onSortChange"
+      >最新</text>
+      <text
+        class="sort-btn {{sortType === 'priceAsc' ? 'active' : ''}}"
+        data-type="priceAsc"
+        bindtap="onSortChange"
+      >价格↑</text>
+      <text
+        class="sort-btn {{sortType === 'priceDesc' ? 'active' : ''}}"
+        data-type="priceDesc"
+        bindtap="onSortChange"
+      >价格↓</text>
+    </view>
+  </view>
+
+  <!-- 二级分类（宝石材质） -->
+  <view wx:if="{{showSubFilter}}" class="gem-filter">
+    <scroll-view scroll-x enhanced show-scrollbar="{{false}}" class="gem-scroll">
+      <view class="gem-tabs">
+        <text
+          class="gem-tab {{activeGemType === 'all' ? 'active' : ''}}"
+          data-type="all"
+          bindtap="onGemTypeChange"
+        >全部</text>
+        <text
+          wx:for="{{subcategories}}"
+          wx:key="id"
+          class="gem-tab {{activeGemType === item.id ? 'active' : ''}}"
+          data-type="{{item.id}}"
+          bindtap="onGemTypeChange"
+        >{{item.icon}} {{item.name}}</text>
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- 作品列表（2列网格） -->
+  <view wx:if="{{jewelryList.length > 0}}" class="product-grid">
+    <view wx:for="{{jewelryList}}" wx:key="id" class="product-grid-item">
+      <product-card item="{{item}}" showCategory="{{false}}" />
+    </view>
+  </view>
+
+  <!-- 空状态 -->
+  <view wx:else class="empty-state">
+    <text class="empty-icon">🔍</text>
+    <text class="empty-title">暂无作品</text>
+    <text class="empty-desc">该分类下还没有作品，请查看其他分类</text>
+  </view>
+
+  <!-- 底部留白 -->
+  <view class="bottom-space"></view>
+</view>

@@ -1,0 +1,78 @@
+<view wx:if="{{item}}" class="page-detail">
+  <!-- 图片轮播 -->
+  <image-viewer images="{{item.images}}" />
+
+  <!-- 作品信息 -->
+  <view class="detail-body">
+    <!-- 标题 -->
+    <view class="detail-header">
+      <view class="dh-top">
+        <text class="dh-name">{{item.name}}</text>
+        <view class="dh-tags">
+          <text wx:if="{{item.isNew}}" class="dh-tag dh-tag-new">NEW</text>
+          <text wx:if="{{item.featured}}" class="dh-tag dh-tag-featured">精选</text>
+        </view>
+      </view>
+      <text class="dh-category gold-text">{{item.categoryName}}</text>
+    </view>
+
+    <!-- 核心参数 -->
+    <view class="detail-params">
+      <view class="param-item">
+        <text class="param-label">主材</text>
+        <text class="param-value">{{item.mainMaterial}}</text>
+      </view>
+      <view class="param-item">
+        <text class="param-label">宝石</text>
+        <text class="param-value">{{item.gemstone}}</text>
+      </view>
+      <view class="param-item">
+        <text class="param-label">克重</text>
+        <text class="param-value">{{item.weight}}</text>
+      </view>
+    </view>
+
+    <!-- 价格 -->
+    <view class="detail-price">
+      <text class="dp-label">参考价格</text>
+      <text class="dp-value gold-text">{{item.priceRange}}</text>
+    </view>
+
+    <!-- 设计理念 -->
+    <view class="detail-section">
+      <text class="ds-title">设计理念</text>
+      <text class="ds-content">{{item.designConcept}}</text>
+    </view>
+
+    <!-- 详细规格 -->
+    <view wx:if="{{specKeys.length > 0}}" class="detail-section">
+      <text class="ds-title">详细规格</text>
+      <view class="spec-table">
+        <view wx:for="{{specKeys}}" wx:for-item="key" wx:key="*this" class="spec-row">
+          <text class="spec-key-fixed">{{key}}</text>
+          <text class="spec-val">{{item.specifications[key]}}</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 底部占位 -->
+    <view class="detail-bottom-space"></view>
+  </view>
+
+  <!-- 底部操作栏 -->
+  <view class="detail-bar safe-bottom">
+    <button class="bar-btn bar-btn-share" open-type="share">
+      <text class="bar-btn-icon">↗</text>
+      <text class="bar-btn-text">分享</text>
+    </button>
+    <view class="bar-btn bar-btn-contact gold-bg" bindtap="onContact">
+      <text class="bar-btn-icon">💬</text>
+      <text class="bar-btn-text">咨询详情</text>
+    </view>
+  </view>
+</view>
+
+<!-- 加载中 -->
+<view wx:else class="detail-loading">
+  <text>加载中...</text>
+</view>

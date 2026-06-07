@@ -1,0 +1,102 @@
+.product-card {
+  width: 100%;
+  transition: transform 0.2s;
+}
+
+.product-card:active {
+  transform: scale(0.97);
+}
+
+/* 图片区域 */
+.card-image {
+  width: 100%;
+  height: 320rpx;
+  position: relative;
+  overflow: hidden;
+  background: #F0F0F0;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+}
+
+.card-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-icon {
+  font-size: 80rpx;
+  opacity: 0.6;
+}
+
+.card-image-meta {
+  position: absolute;
+  top: 16rpx;
+  left: 16rpx;
+  right: 16rpx;
+  display: flex;
+  gap: 8rpx;
+  pointer-events: none;
+}
+
+.tag-new {
+  background: var(--gold-primary);
+  color: #FFFFFF;
+  font-size: var(--font-xs);
+  padding: 4rpx 12rpx;
+  border-radius: 4rpx;
+  font-weight: 600;
+}
+
+.tag-featured {
+  background: rgba(0, 0, 0, 0.5);
+  color: #FFFFFF;
+  font-size: var(--font-xs);
+  padding: 4rpx 12rpx;
+  border-radius: 4rpx;
+}
+
+/* 信息区域 */
+.card-info {
+  padding: 20rpx;
+}
+
+.card-category {
+  font-size: var(--font-xs);
+  margin-bottom: 4rpx;
+  display: block;
+}
+
+.card-name {
+  font-size: var(--font-lg);
+  font-weight: 600;
+  color: var(--text-primary);
+  display: block;
+  margin-bottom: 8rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.card-meta {
+  font-size: var(--font-sm);
+  color: var(--text-secondary);
+  margin-bottom: 8rpx;
+}
+
+.card-material { color: var(--text-secondary); }
+.card-gem { color: var(--gold-primary); }
+
+.card-price {
+  font-size: var(--font-md);
+  font-weight: 700;
+  display: block;
+}

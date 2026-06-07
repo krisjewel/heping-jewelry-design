@@ -1,0 +1,18 @@
+<view class="category-grid cols-{{columns}} size-{{size}}">
+  <view
+    wx:for="{{categoryList}}"
+    wx:key="id"
+    class="category-item"
+    data-category="{{item}}"
+    bindtap="onTapCategory"
+  >
+    <view class="category-icon-wrap" style="background: {{item.image}};">
+      <text class="category-icon">{{item.icon}}</text>
+    </view>
+    <view class="category-text">
+      <text class="category-name">{{item.name}}</text>
+      <text wx:if="{{showCount && size !== 'small'}}" class="category-desc">{{item.desc}}</text>
+      <text wx:if="{{showCount}}" class="category-count">{{item.count}} 件作品</text>
+    </view>
+  </view>
+</view>

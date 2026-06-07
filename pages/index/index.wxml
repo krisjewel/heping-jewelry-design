@@ -1,0 +1,108 @@
+<view class="page-index">
+  <!-- ===== 顶部品牌Banner ===== -->
+  <view class="hero-banner hero-dark">
+    <view class="hero-overlay">
+      <view class="hero-content">
+        <text class="hero-brand">{{brandName}}</text>
+        <text class="hero-slogan">{{brandSlogan}}</text>
+        <view class="hero-divider"></view>
+        <text class="hero-subtitle">SINCE 1999</text>
+      </view>
+    </view>
+    <!-- 底部波浪装饰 -->
+    <view class="hero-wave"></view>
+  </view>
+
+  <!-- ===== 搜索栏 ===== -->
+  <view class="section search-section">
+    <view class="search-entry" bindtap="onTapSearch">
+      <text class="search-entry-icon">🔍</text>
+      <text class="search-entry-text">搜索珠宝名称、材质、宝石…</text>
+    </view>
+  </view>
+
+  <!-- ===== 分类入口 ===== -->
+  <view class="section">
+    <view class="section-header">
+      <text class="section-title">作品分类</text>
+      <text class="section-subtitle">探索您心仪的风格</text>
+    </view>
+    <category-grid
+      categories="{{categories}}"
+      columns="{{3}}"
+      size="normal"
+      showCount="{{true}}"
+    />
+  </view>
+
+  <!-- ===== 精选作品 ===== -->
+  <view class="section">
+    <view class="section-header">
+      <view class="section-title-row">
+        <text class="section-title">精选推荐</text>
+        <text class="section-badge">FEATURED</text>
+      </view>
+      <text class="section-subtitle">匠人匠心，为您呈现</text>
+    </view>
+    <scroll-view class="featured-scroll" scroll-x enhanced show-scrollbar="{{false}}">
+      <view class="featured-list">
+        <view
+          wx:for="{{featuredList}}"
+          wx:key="id"
+          class="featured-item"
+          data-item="{{item}}"
+          bindtap="onTapFeatured"
+        >
+          <view class="featured-image">
+            <image class="featured-img" src="{{item.images[0]}}" mode="aspectFill" lazy-load />
+            <view wx:if="{{item.isNew}}" class="featured-tag-new">NEW</view>
+          </view>
+          <view class="featured-info">
+            <text class="featured-name">{{item.name}}</text>
+            <text class="featured-meta">{{item.mainMaterial}} · {{item.gemstone}}</text>
+            <text class="featured-price gold-text">{{item.priceRange}}</text>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- ===== 品牌简介 ===== -->
+  <view class="section">
+    <view class="about-card card">
+      <view class="about-header">
+        <text class="about-icon">🏛️</text>
+        <text class="about-title">品牌故事</text>
+      </view>
+      <view class="about-body">
+        <text class="about-text">
+          何平珠宝设计创立于1999年，秉承"匠人匠心·精艺求精"的品牌理念，
+          专注于高端珠宝设计与定制。每一件作品都凝聚了设计师的心血与巧思，
+          以精湛工艺诠释永恒之美。我们相信，珠宝不仅是装饰，更是一种情感的表达，
+          一段故事的承载。
+        </text>
+        <view class="about-features">
+          <view class="about-feature">
+            <text class="af-icon">💎</text>
+            <text class="af-label">精选宝石</text>
+          </view>
+          <view class="about-feature">
+            <text class="af-icon">🔨</text>
+            <text class="af-label">匠心工艺</text>
+          </view>
+          <view class="about-feature">
+            <text class="af-icon">✨</text>
+            <text class="af-label">专属定制</text>
+          </view>
+          <view class="about-feature">
+            <text class="af-icon">🛡️</text>
+            <text class="af-label">品质保证</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 底部留白（tabBar占位） -->
+  <view class="bottom-space"></view>
+</view>

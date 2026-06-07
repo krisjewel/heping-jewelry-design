@@ -1,0 +1,33 @@
+<view class="page-category">
+  <!-- 顶部统计条 -->
+  <view class="category-header">
+    <text class="ch-title">全部分类</text>
+    <text class="ch-count">共 {{totalCount}} 件作品</text>
+  </view>
+
+  <!-- 分类网格 (2列) -->
+  <view class="category-list">
+    <view
+      wx:for="{{categories}}"
+      wx:key="id"
+      class="category-card"
+      data-category="{{item}}"
+      bindtap="onTapCategory"
+    >
+      <view class="cc-image-wrap" style="background: {{item.image}};">
+        <text class="cc-icon">{{item.icon}}</text>
+      </view>
+      <view class="cc-info">
+        <text class="cc-name">{{item.name}}</text>
+        <text class="cc-desc">{{item.desc}}</text>
+        <view class="cc-count-row">
+          <text class="cc-count gold-text">{{item.count}} 件作品</text>
+          <text class="cc-arrow">→</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 底部留白 -->
+  <view class="bottom-space"></view>
+</view>

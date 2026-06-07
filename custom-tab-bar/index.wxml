@@ -1,0 +1,37 @@
+<view class="tab-bar safe-bottom">
+  <view
+    wx:for="{{list}}"
+    wx:key="index"
+    class="tab-bar-item"
+    data-path="{{item.pagePath}}"
+    data-index="{{index}}"
+    bindtap="switchTab"
+  >
+    <!-- 首页图标 -->
+    <view wx:if="{{item.icon === 'home'}}" class="tab-icon">
+      <view class="icon-home {{selected === index ? 'active' : ''}}">
+        <view class="home-roof"></view>
+        <view class="home-body"></view>
+        <view class="home-door"></view>
+      </view>
+    </view>
+    <!-- 分类图标 -->
+    <view wx:elif="{{item.icon === 'category'}}" class="tab-icon">
+      <view class="icon-category {{selected === index ? 'active' : ''}}">
+        <view class="cat-grid">
+          <view class="cat-dot"></view>
+          <view class="cat-dot"></view>
+          <view class="cat-dot"></view>
+          <view class="cat-dot"></view>
+        </view>
+      </view>
+    </view>
+    <!-- 联系图标 -->
+    <view wx:else class="tab-icon">
+      <view class="icon-contact {{selected === index ? 'active' : ''}}">
+        <view class="contact-diamond"></view>
+      </view>
+    </view>
+    <text class="tab-text {{selected === index ? 'active' : ''}}">{{item.text}}</text>
+  </view>
+</view>

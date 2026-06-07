@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-ChildItem \"C:\\\\Users\\\\Administrator\\\\.claude\\\\projects\\\\D--Trae-CN-202666\" -Recurse | Where-Object { $_.PSIsContainer -eq $false } | Select-Object Name, LastWriteTime, Length | Sort-Object LastWriteTime -Descending | Select-Object -First 20)",
+      "PowerShell(Get-ChildItem \"D:\\\\Trae CN\\\\202666\" -Recurse -Depth 3 | Where-Object { -not $_.PSIsContainer } | Select-Object FullName | ForEach-Object { $_.FullName -replace [regex]::Escape\\(\"D:\\\\Trae CN\\\\202666\\\\\"\\), \"\" })",
+      "PowerShell(New-Item *)",
+      "PowerShell(winget install)",
+      "PowerShell(git *)",
+      "PowerShell(git config *)",
+      "PowerShell($env:Path = [System.Environment]::GetEnvironmentVariable\\(\"Path\",\"Machine\"\\) + \";\" + [System.Environment]::GetEnvironmentVariable\\(\"Path\",\"User\"\\); if \\(Test-Path \"$env:USERPROFILE\\\\.ssh\\\\id_ed25519\"\\) { Write-Output \"SSH密钥已存在\"; Get-Content \"$env:USERPROFILE\\\\.ssh\\\\id_ed25519.pub\" } else { ssh-keygen -t ed25519 -C \"krisss147258@gmail.com\" -N '\"\"' -f \"$env:USERPROFILE\\\\.ssh\\\\id_ed25519\"; Write-Output \"SSH密钥已生成\"; Get-Content \"$env:USERPROFILE\\\\.ssh\\\\id_ed25519.pub\" })",
+      "PowerShell(gh *)",
+      "PowerShell(winget install *)",
+      "PowerShell(gh auth *)",
+      "PowerShell(Test-NetConnection *)",
+      "PowerShell(Get-Content \"d:\\\\Trae CN\\\\202666\\\\.claude\\\\1\\\\1\" -Raw; Write-Output \"---长度: $\\(\\(Get-Content 'd:\\\\Trae CN\\\\202666\\\\.claude\\\\1\\\\1' -Raw\\).Length\\)\")",
+      "PowerShell(Out-File *)",
+      "PowerShell($env:Path = [System.Environment]::GetEnvironmentVariable\\(\"Path\",\"Machine\"\\) + \";\" + [System.Environment]::GetEnvironmentVariable\\(\"Path\",\"User\"\\); ssh -T git@github.com -o StrictHostKeyChecking=accept-new 2>&1)",
+      "PowerShell(Set-Location *)",
+      "PowerShell($env:Path = [System.Environment]::GetEnvironmentVariable\\(\"Path\",\"Machine\"\\) + \";\" + [System.Environment]::GetEnvironmentVariable\\(\"Path\",\"User\"\\); gh auth login --hostname github.com --git-protocol ssh --scopes admin:public_key,repo,delete_repo 2>&1)",
+      "PowerShell(git add *)"
+    ]
+  }
+}
