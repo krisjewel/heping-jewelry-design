@@ -21,7 +21,7 @@ App({
     brandName: '何平珠宝设计',
     brandSlogan: '匠人匠心 · 精艺求精',
     contactPhone: '138-0000-8888',
-    contactAddress: '北京市朝阳区珠宝城A座1808',
+    contactAddress: '云南省昆明市五华区东风西路世代景星珠宝地下室一号',
     businessHours: '周一至周日 10:00 - 21:00',
     wechatId: 'JewelryDesign_Official',
 
